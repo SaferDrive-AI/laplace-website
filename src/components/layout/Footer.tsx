@@ -5,8 +5,8 @@ export function Footer() {
     <footer className="border-t border-ink/5">
       <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex flex-col items-center md:items-start gap-1">
-          <span className="text-sm font-bold tracking-[0.15em] text-teal uppercase">INCHOR</span>
-          <span className="text-xs text-ink-faint">Safety instinct for every robot</span>
+          <span className="font-serif text-2xl tracking-tight text-teal">LAPLACE</span>
+          <span className="text-xs text-ink-faint">What-if engine for the physical world</span>
         </div>
 
         <div className="flex gap-6">
@@ -17,7 +17,7 @@ export function Footer() {
           ))}
         </div>
 
-        <p className="text-xs text-ink-faint">&copy; {new Date().getFullYear()} INCHOR Inc.</p>
+        <p className="text-xs text-ink-faint">&copy; {new Date().getFullYear()} Inchor Inc.</p>
       </div>
     </footer>
   )
