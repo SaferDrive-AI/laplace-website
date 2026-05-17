@@ -1,78 +1,91 @@
-import { X, Check, Bot, Car, Factory, PersonStanding, Shield } from 'lucide-react'
+import { HelpCircle, AlertTriangle, Building2, Plane, Warehouse, Car, Layers } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { PROBLEM } from '../../lib/constants'
 import { SectionWrapper } from '../ui/SectionWrapper'
 import { GlowCard } from '../ui/GlowCard'
+import { DiagramImage } from '../ui/DiagramImage'
 
-const robotTypes = [
-  { icon: PersonStanding, label: 'Humanoid' },
+const verticals = [
+  { icon: Building2, label: 'City' },
+  { icon: Plane, label: 'Airport' },
+  { icon: Warehouse, label: 'Warehouse' },
   { icon: Car, label: 'AV' },
-  { icon: Factory, label: 'Industrial' },
-  { icon: Bot, label: 'Service' },
 ]
 
 export function ProblemSection() {
   return (
-    <SectionWrapper id="vision">
-      {/* Headline */}
+    <SectionWrapper id="problem">
       <div className="text-center max-w-2xl mx-auto mb-16">
         <p className="text-teal text-xs font-bold tracking-[0.3em] uppercase mb-4">
           {PROBLEM.label}
         </p>
-        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight text-ink mb-6">
+        <h2 className="font-serif text-4xl md:text-5xl leading-[1.1] tracking-tight text-ink mb-6">
           {PROBLEM.headline}
         </h2>
         <p className="text-ink-muted text-lg leading-relaxed">{PROBLEM.body}</p>
       </div>
 
-      {/* Rule vs Instinct */}
-      <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-24">
-        <GlowCard accent="red">
+      <div className="my-16 max-w-4xl mx-auto">
+        <DiagramImage
+          name="problem-banner"
+          alt="Without preview, every change is a live experiment; with Laplace, every change is a rehearsal with previewable futures."
+          loading="eager"
+          className="rounded-xl"
+        />
+        <div className="grid grid-cols-2 gap-4 mt-4 max-w-3xl mx-auto px-4">
+          <p className="text-center text-ink-faint text-[11px] font-bold tracking-[0.2em] uppercase">
+            Without preview
+          </p>
+          <p className="text-center text-teal text-[11px] font-bold tracking-[0.2em] uppercase">
+            With Laplace
+          </p>
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-24">
+        <GlowCard accent="teal">
           <div className="flex items-start gap-4">
-            <div className="w-9 h-9 rounded-full bg-danger-light flex items-center justify-center flex-shrink-0">
-              <X className="w-4 h-4 text-danger" />
+            <div className="w-10 h-10 rounded-full bg-teal-lighter flex items-center justify-center flex-shrink-0">
+              <HelpCircle className="w-5 h-5 text-teal" />
             </div>
             <div>
-              <h3 className="font-semibold text-base mb-2 text-ink">{PROBLEM.ruleCard.title}</h3>
-              <pre className="text-xs text-ink-muted font-mono bg-cream rounded-lg p-3 mb-2 overflow-x-auto">{PROBLEM.ruleCard.code}</pre>
-              <p className="text-danger text-xs">{PROBLEM.ruleCard.problem}</p>
+              <h3 className="font-semibold text-lg mb-2 text-ink">{PROBLEM.knownCard.title}</h3>
+              <p className="text-ink-muted text-sm leading-relaxed">{PROBLEM.knownCard.description}</p>
             </div>
           </div>
         </GlowCard>
 
-        <GlowCard accent="teal">
+        <GlowCard accent="red">
           <div className="flex items-start gap-4">
-            <div className="w-9 h-9 rounded-full bg-teal-lighter flex items-center justify-center flex-shrink-0">
-              <Check className="w-4 h-4 text-teal" />
+            <div className="w-10 h-10 rounded-full bg-danger-light flex items-center justify-center flex-shrink-0">
+              <AlertTriangle className="w-5 h-5 text-danger" />
             </div>
             <div>
-              <h3 className="font-semibold text-base mb-2 text-ink">{PROBLEM.instinctCard.title}</h3>
-              <p className="text-ink-muted text-xs mb-2">{PROBLEM.instinctCard.description}</p>
-              <p className="text-teal text-xs font-medium">{PROBLEM.instinctCard.advantage}</p>
+              <h3 className="font-semibold text-lg mb-2 text-ink">{PROBLEM.unknownCard.title}</h3>
+              <p className="text-ink-muted text-sm leading-relaxed">{PROBLEM.unknownCard.description}</p>
             </div>
           </div>
         </GlowCard>
       </div>
 
-      {/* One instinct, all robots */}
       <div className="max-w-2xl mx-auto">
         <p className="text-center text-ink-faint text-xs font-bold tracking-[0.2em] uppercase mb-10">
-          One safety instinct across every robot
+          {PROBLEM.verticalsLabel}
         </p>
         <div className="flex items-center justify-center gap-6 md:gap-10">
-          {robotTypes.map((r, i) => (
+          {verticals.map((v, i) => (
             <motion.div
-              key={r.label}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              key={v.label}
+              initial={{ y: 10 }}
+              whileInView={{ y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.4 }}
+              transition={{ delay: i * 0.06, duration: 0.3 }}
               className="flex flex-col items-center gap-2"
             >
               <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-white border border-ink/8 flex items-center justify-center">
-                <r.icon className="w-6 h-6 text-ink-faint" />
+                <v.icon className="w-6 h-6 text-ink-faint" />
               </div>
-              <span className="text-[10px] text-ink-faint tracking-wide">{r.label}</span>
+              <span className="text-[10px] text-ink-faint tracking-wide">{v.label}</span>
             </motion.div>
           ))}
         </div>
@@ -82,16 +95,16 @@ export function ProblemSection() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ scale: 0.95 }}
+          whileInView={{ scale: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.5 }}
+          transition={{ delay: 0.2, duration: 0.4 }}
           className="flex flex-col items-center"
         >
           <div className="w-16 h-16 rounded-full bg-teal flex items-center justify-center shadow-xl shadow-teal/15">
-            <Shield className="w-7 h-7 text-white" />
+            <Layers className="w-7 h-7 text-white" />
           </div>
-          <p className="text-teal text-xs font-bold tracking-[0.2em] uppercase mt-3">INCHOR</p>
+          <p className="text-teal text-xs font-bold tracking-[0.2em] uppercase mt-3">{PROBLEM.brandLabel}</p>
         </motion.div>
       </div>
     </SectionWrapper>

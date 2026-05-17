@@ -2,9 +2,11 @@ import { Navbar } from './components/layout/Navbar'
 import { Footer } from './components/layout/Footer'
 import { HeroSection } from './components/sections/HeroSection'
 import { ProblemSection } from './components/sections/ProblemSection'
-import { HowItWorksSection } from './components/sections/HowItWorksSection'
-import { RoadmapSection } from './components/sections/RoadmapSection'
-import { CredentialsSection } from './components/sections/CredentialsSection'
+import { WhyNowSection } from './components/sections/WhyNowSection'
+import { EngineSection } from './components/sections/EngineSection'
+import { ApplicationsSection } from './components/sections/ApplicationsSection'
+import { AVSection } from './components/sections/AVSection'
+import { CitySection } from './components/sections/CitySection'
 import { CTASection } from './components/sections/CTASection'
 
 export default function App() {
@@ -13,9 +15,11 @@ export default function App() {
       <Navbar />
       <HeroSection />
       <ProblemSection />
-      <HowItWorksSection />
-      <RoadmapSection />
-      <CredentialsSection />
+      <WhyNowSection />
+      <EngineSection />
+      <ApplicationsSection />
+      <AVSection />
+      <CitySection />
       <CTASection />
       <Footer />
     </div>
