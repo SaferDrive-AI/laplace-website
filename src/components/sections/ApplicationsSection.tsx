@@ -1,10 +1,20 @@
-import { Car, Building2, Warehouse, Plane } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { APPLICATIONS } from '../../lib/constants'
 import { SectionWrapper } from '../ui/SectionWrapper'
 import { GlowCard } from '../ui/GlowCard'
+import {
+  AVDiagram,
+  CityDiagram,
+  WarehouseDiagram,
+  AirportDiagram,
+} from '../diagrams/ApplicationsDiagrams'
 
-const icons = { Car, Building2, Warehouse, Plane }
+const diagrams = {
+  Car: AVDiagram,
+  Building2: CityDiagram,
+  Warehouse: WarehouseDiagram,
+  Plane: AirportDiagram,
+}
 
 export function ApplicationsSection() {
   return (
@@ -20,7 +30,7 @@ export function ApplicationsSection() {
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
         {APPLICATIONS.cards.map((card, i) => {
-          const Icon = icons[card.icon]
+          const Diagram = diagrams[card.icon]
           return (
             <motion.div
               key={card.title}
@@ -30,8 +40,8 @@ export function ApplicationsSection() {
               transition={{ delay: i * 0.06, duration: 0.4 }}
             >
               <GlowCard className="h-full !p-6">
-                <div className="w-11 h-11 rounded-full bg-teal-lighter flex items-center justify-center mb-4">
-                  <Icon className="w-5 h-5 text-teal" />
+                <div className="mb-4 text-teal w-full max-w-[140px]">
+                  <Diagram />
                 </div>
                 <h3 className="font-semibold text-base mb-2 text-ink">{card.title}</h3>
                 <p className="text-ink-muted text-sm leading-relaxed">{card.description}</p>

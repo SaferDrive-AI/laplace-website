@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { PROBLEM } from '../../lib/constants'
 import { SectionWrapper } from '../ui/SectionWrapper'
 import { GlowCard } from '../ui/GlowCard'
+import { ProblemDiagram } from '../diagrams/ProblemDiagram'
 
 const verticals = [
   { icon: Building2, label: 'City' },
@@ -22,6 +23,18 @@ export function ProblemSection() {
           {PROBLEM.headline}
         </h2>
         <p className="text-ink-muted text-lg leading-relaxed">{PROBLEM.body}</p>
+      </div>
+
+      <div className="my-16 max-w-4xl mx-auto text-teal">
+        <ProblemDiagram />
+        <div className="grid grid-cols-2 gap-4 mt-3 max-w-3xl mx-auto px-4">
+          <p className="text-center text-ink-faint text-[11px] font-bold tracking-[0.2em] uppercase">
+            Without preview
+          </p>
+          <p className="text-center text-teal text-[11px] font-bold tracking-[0.2em] uppercase">
+            With Laplace
+          </p>
+        </div>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-24">

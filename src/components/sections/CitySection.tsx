@@ -1,8 +1,4 @@
 import {
-  TrafficCone,
-  CalendarClock,
-  Construction,
-  BusFront,
   AlertTriangle,
   Timer,
   Gauge,
@@ -12,8 +8,19 @@ import { motion } from 'framer-motion'
 import { CITY } from '../../lib/constants'
 import { SectionWrapper } from '../ui/SectionWrapper'
 import { GlowCard } from '../ui/GlowCard'
+import {
+  SignalLaneDiagram,
+  EventSurgeDiagram,
+  ConstructionDiagram,
+  TransitDiagram,
+} from '../diagrams/UseCaseDiagrams'
 
-const cardIcons = { TrafficCone, CalendarClock, Construction, BusFront }
+const cardDiagrams = {
+  TrafficCone: SignalLaneDiagram,
+  CalendarClock: EventSurgeDiagram,
+  Construction: ConstructionDiagram,
+  BusFront: TransitDiagram,
+}
 const outputIcons = { AlertTriangle, Timer, Gauge, Activity }
 
 export function CitySection() {
@@ -33,7 +40,7 @@ export function CitySection() {
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto mb-14">
         {CITY.cards.map((card, i) => {
-          const Icon = cardIcons[card.icon]
+          const Diagram = cardDiagrams[card.icon]
           return (
             <motion.div
               key={card.title}
@@ -43,8 +50,8 @@ export function CitySection() {
               transition={{ delay: i * 0.06, duration: 0.4 }}
             >
               <GlowCard className="h-full !p-6">
-                <div className="w-11 h-11 rounded-full bg-teal-lighter flex items-center justify-center mb-4">
-                  <Icon className="w-5 h-5 text-teal" />
+                <div className="mb-4 text-teal">
+                  <Diagram className="w-full max-w-[100px]" />
                 </div>
                 <h3 className="font-semibold text-base mb-2 text-ink">{card.title}</h3>
                 <p className="text-ink-muted text-sm leading-relaxed">{card.body}</p>
