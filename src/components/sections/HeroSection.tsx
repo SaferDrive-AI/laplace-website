@@ -175,25 +175,16 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.7 }}
-            className="mt-6 text-lg md:text-xl text-ink-light max-w-xl leading-relaxed"
+            className="mt-8 text-lg md:text-xl text-ink-light max-w-xl leading-relaxed"
           >
             {HERO.subheadline}
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.7 }}
-            className="mt-5 text-base text-ink-muted max-w-xl leading-relaxed"
-          >
-            {HERO.body}
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.6 }}
-            className="mt-10 flex flex-col sm:flex-row items-start gap-4"
+            transition={{ delay: 0.85, duration: 0.6 }}
+            className="mt-12 flex flex-col sm:flex-row items-start gap-4"
           >
             <Button href={HERO.cta1Href} size="lg">
               {HERO.cta1}
