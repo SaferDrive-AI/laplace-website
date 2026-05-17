@@ -1,11 +1,17 @@
-import { Layers, Network, Workflow, Globe, Database, Sparkles } from 'lucide-react'
+import { Fragment } from 'react'
+import { Globe, Database, Sparkles, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { ENGINE } from '../../lib/constants'
 import { SectionWrapper } from '../ui/SectionWrapper'
 import { GlowCard } from '../ui/GlowCard'
+import {
+  BuildWorldDiagram,
+  LearnAgentsDiagram,
+  RollOutDiagram,
+} from '../diagrams/EngineDiagrams'
 
-const cardIcons = { Layers, Network, Workflow }
 const phaseIcons = { Globe, Database, Sparkles }
+const cardDiagrams = [BuildWorldDiagram, LearnAgentsDiagram, RollOutDiagram]
 
 export function EngineSection() {
   return (
@@ -21,7 +27,7 @@ export function EngineSection() {
 
       <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {ENGINE.cards.map((card, i) => {
-          const Icon = cardIcons[card.icon]
+          const Diagram = cardDiagrams[i]
           const step = String(i + 1).padStart(2, '0')
           return (
             <motion.div
@@ -32,15 +38,15 @@ export function EngineSection() {
               transition={{ delay: i * 0.08, duration: 0.4 }}
             >
               <GlowCard className="h-full flex flex-col">
-                <div className="flex items-start justify-between mb-5">
-                  <div className="w-11 h-11 rounded-full bg-teal-lighter flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-teal" />
-                  </div>
-                  <span className="font-serif text-2xl italic text-teal/35 tabular-nums leading-none mt-1">
+                <div className="mb-5 text-teal">
+                  <Diagram />
+                </div>
+                <div className="flex items-baseline justify-between mb-3">
+                  <h3 className="font-semibold text-lg text-ink">{card.title}</h3>
+                  <span className="font-serif text-2xl italic text-teal/35 tabular-nums leading-none">
                     {step}
                   </span>
                 </div>
-                <h3 className="font-semibold text-lg mb-3 text-ink">{card.title}</h3>
                 <p className="text-ink-muted text-sm leading-relaxed mb-5">{card.description}</p>
                 <ul className="mt-auto space-y-1.5 pt-4 border-t border-teal/10">
                   {card.bullets.map((b) => (
@@ -65,26 +71,35 @@ export function EngineSection() {
           <div className="flex-1 h-px bg-teal/15" />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid gap-5 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-stretch">
           {ENGINE.pipeline.map((phase, i) => {
             const Icon = phaseIcons[phase.icon]
             return (
-              <motion.div
-                key={phase.title}
-                initial={{ y: 12 }}
-                whileInView={{ y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07, duration: 0.4 }}
-                className="bg-white/60 border border-teal/10 rounded-xl p-5"
-              >
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-full bg-teal flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-4 h-4 text-white" />
+              <Fragment key={phase.title}>
+                <motion.div
+                  initial={{ y: 12 }}
+                  whileInView={{ y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.07, duration: 0.4 }}
+                  className="bg-white/60 border border-teal/10 rounded-xl p-5"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-8 rounded-full bg-teal flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-4 h-4 text-white" />
+                    </div>
+                    <h4 className="font-semibold text-sm text-ink">{phase.title}</h4>
                   </div>
-                  <h4 className="font-semibold text-sm text-ink">{phase.title}</h4>
-                </div>
-                <p className="text-ink-muted text-xs leading-relaxed">{phase.body}</p>
-              </motion.div>
+                  <p className="text-ink-muted text-xs leading-relaxed">{phase.body}</p>
+                </motion.div>
+                {i < ENGINE.pipeline.length - 1 && (
+                  <div
+                    className="hidden md:flex items-center justify-center text-teal/40"
+                    aria-hidden="true"
+                  >
+                    <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
+                  </div>
+                )}
+              </Fragment>
             )
           })}
         </div>

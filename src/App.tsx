@@ -5,6 +5,7 @@ import { ProblemSection } from './components/sections/ProblemSection'
 import { WhyNowSection } from './components/sections/WhyNowSection'
 import { EngineSection } from './components/sections/EngineSection'
 import { ApplicationsSection } from './components/sections/ApplicationsSection'
+import { AVSection } from './components/sections/AVSection'
 import { CitySection } from './components/sections/CitySection'
 import { CTASection } from './components/sections/CTASection'
 
@@ -17,6 +18,7 @@ export default function App() {
       <WhyNowSection />
       <EngineSection />
       <ApplicationsSection />
+      <AVSection />
       <CitySection />
       <CTASection />
       <Footer />

@@ -2,6 +2,7 @@ export const NAV_LINKS = [
   { label: 'Problem', href: '#problem' },
   { label: 'Engine', href: '#engine' },
   { label: 'Applications', href: '#applications' },
+  { label: 'AV', href: '#av' },
   { label: 'City', href: '#city' },
 ] as const
 
@@ -135,6 +136,46 @@ export const APPLICATIONS = {
       description: 'Gate, taxiway and surface-ops what-ifs.',
     },
   ],
+}
+
+export const AV = {
+  label: 'ON THE ROAD',
+  headline: 'What-if for autonomous fleets.',
+  subhead:
+    'AV programs ship lane policies, perception updates and routing tweaks every sprint — each one a live experiment on public roads. Laplace rehearses each change against an Agent Foundation Model first.',
+  cards: [
+    {
+      icon: 'Route' as const,
+      title: 'Lane policy changes',
+      body:
+        'Test new keep-right rules, gap-acceptance thresholds and lane-change cadences against realistic mixed-traffic populations.',
+    },
+    {
+      icon: 'Footprints' as const,
+      title: 'Pedestrian & cyclist what-ifs',
+      body:
+        'Stress-test perception and prediction against pedestrian and cyclist behavior the fleet rarely sees in logs.',
+    },
+    {
+      icon: 'AlertOctagon' as const,
+      title: 'Edge-case rehearsal',
+      body:
+        'Synthesize the long-tail intersection, the late-night double-park, the merging cement truck — before the fleet sees them live.',
+    },
+    {
+      icon: 'Share2' as const,
+      title: 'Fleet decisions',
+      body:
+        'Compare routing, dispatch and rebalancing strategies under counterfactual demand and incident scenarios.',
+    },
+  ],
+  outputs: [
+    { icon: 'ShieldAlert' as const, label: 'Edge cases surfaced' },
+    { icon: 'Activity' as const, label: 'Behavior modeled' },
+    { icon: 'BarChart3' as const, label: 'Outcome distribution' },
+    { icon: 'Repeat' as const, label: 'Closed-loop feedback' },
+  ],
+  footer: 'Every release becomes a rehearsal, not a real-world trial.',
 }
 
 export const CITY = {
