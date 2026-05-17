@@ -2,18 +2,13 @@ import { motion } from 'framer-motion'
 import { APPLICATIONS } from '../../lib/constants'
 import { SectionWrapper } from '../ui/SectionWrapper'
 import { GlowCard } from '../ui/GlowCard'
-import {
-  AVDiagram,
-  CityDiagram,
-  WarehouseDiagram,
-  AirportDiagram,
-} from '../diagrams/ApplicationsDiagrams'
+import { DiagramImage } from '../ui/DiagramImage'
 
-const diagrams = {
-  Car: AVDiagram,
-  Building2: CityDiagram,
-  Warehouse: WarehouseDiagram,
-  Plane: AirportDiagram,
+const diagramNames: Record<string, string> = {
+  Car: 'apps-av',
+  Building2: 'apps-city',
+  Warehouse: 'apps-warehouse',
+  Plane: 'apps-airport',
 }
 
 export function ApplicationsSection() {
@@ -29,26 +24,23 @@ export function ApplicationsSection() {
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
-        {APPLICATIONS.cards.map((card, i) => {
-          const Diagram = diagrams[card.icon]
-          return (
-            <motion.div
-              key={card.title}
-              initial={{ y: 16 }}
-              whileInView={{ y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.06, duration: 0.4 }}
-            >
-              <GlowCard className="h-full !p-6">
-                <div className="mb-4 text-teal w-full max-w-[140px]">
-                  <Diagram />
-                </div>
-                <h3 className="font-semibold text-base mb-2 text-ink">{card.title}</h3>
-                <p className="text-ink-muted text-sm leading-relaxed">{card.description}</p>
-              </GlowCard>
-            </motion.div>
-          )
-        })}
+        {APPLICATIONS.cards.map((card, i) => (
+          <motion.div
+            key={card.title}
+            initial={{ y: 16 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.06, duration: 0.4 }}
+          >
+            <GlowCard className="h-full !p-6">
+              <div className="mb-4 -mx-2 -mt-2 rounded-xl overflow-hidden">
+                <DiagramImage name={diagramNames[card.icon]} alt={card.title} />
+              </div>
+              <h3 className="font-semibold text-base mb-2 text-ink">{card.title}</h3>
+              <p className="text-ink-muted text-sm leading-relaxed">{card.description}</p>
+            </GlowCard>
+          </motion.div>
+        ))}
       </div>
     </SectionWrapper>
   )

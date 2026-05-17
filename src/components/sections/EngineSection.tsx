@@ -4,14 +4,10 @@ import { motion } from 'framer-motion'
 import { ENGINE } from '../../lib/constants'
 import { SectionWrapper } from '../ui/SectionWrapper'
 import { GlowCard } from '../ui/GlowCard'
-import {
-  BuildWorldDiagram,
-  LearnAgentsDiagram,
-  RollOutDiagram,
-} from '../diagrams/EngineDiagrams'
+import { DiagramImage } from '../ui/DiagramImage'
 
 const phaseIcons = { Globe, Database, Sparkles }
-const cardDiagrams = [BuildWorldDiagram, LearnAgentsDiagram, RollOutDiagram]
+const cardImages = ['engine-build-world', 'engine-learn-agents', 'engine-roll-out']
 
 export function EngineSection() {
   return (
@@ -27,7 +23,6 @@ export function EngineSection() {
 
       <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {ENGINE.cards.map((card, i) => {
-          const Diagram = cardDiagrams[i]
           const step = String(i + 1).padStart(2, '0')
           return (
             <motion.div
@@ -38,8 +33,8 @@ export function EngineSection() {
               transition={{ delay: i * 0.08, duration: 0.4 }}
             >
               <GlowCard className="h-full flex flex-col">
-                <div className="mb-5 text-teal">
-                  <Diagram />
+                <div className="mb-5 -mx-2 -mt-2">
+                  <DiagramImage name={cardImages[i]} alt={card.title} />
                 </div>
                 <div className="flex items-baseline justify-between mb-3">
                   <h3 className="font-semibold text-lg text-ink">{card.title}</h3>

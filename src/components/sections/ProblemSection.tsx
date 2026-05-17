@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { PROBLEM } from '../../lib/constants'
 import { SectionWrapper } from '../ui/SectionWrapper'
 import { GlowCard } from '../ui/GlowCard'
-import { ProblemDiagram } from '../diagrams/ProblemDiagram'
+import { DiagramImage } from '../ui/DiagramImage'
 
 const verticals = [
   { icon: Building2, label: 'City' },
@@ -25,9 +25,14 @@ export function ProblemSection() {
         <p className="text-ink-muted text-lg leading-relaxed">{PROBLEM.body}</p>
       </div>
 
-      <div className="my-16 max-w-4xl mx-auto text-teal">
-        <ProblemDiagram />
-        <div className="grid grid-cols-2 gap-4 mt-3 max-w-3xl mx-auto px-4">
+      <div className="my-16 max-w-4xl mx-auto">
+        <DiagramImage
+          name="problem-banner"
+          alt="Without preview, every change is a live experiment; with Laplace, every change is a rehearsal with previewable futures."
+          loading="eager"
+          className="rounded-xl"
+        />
+        <div className="grid grid-cols-2 gap-4 mt-4 max-w-3xl mx-auto px-4">
           <p className="text-center text-ink-faint text-[11px] font-bold tracking-[0.2em] uppercase">
             Without preview
           </p>

@@ -8,18 +8,13 @@ import { motion } from 'framer-motion'
 import { AV } from '../../lib/constants'
 import { SectionWrapper } from '../ui/SectionWrapper'
 import { GlowCard } from '../ui/GlowCard'
-import {
-  LanePolicyDiagram,
-  PedestrianDiagram,
-  EdgeCaseDiagram,
-  FleetDiagram,
-} from '../diagrams/UseCaseDiagrams'
+import { DiagramImage } from '../ui/DiagramImage'
 
-const cardDiagrams = {
-  Route: LanePolicyDiagram,
-  Footprints: PedestrianDiagram,
-  AlertOctagon: EdgeCaseDiagram,
-  Share2: FleetDiagram,
+const diagramNames: Record<string, string> = {
+  Route: 'av-lane',
+  Footprints: 'av-pedestrian',
+  AlertOctagon: 'av-edge-case',
+  Share2: 'av-fleet',
 }
 const outputIcons = { ShieldAlert, Activity, BarChart3, Repeat }
 
@@ -39,26 +34,23 @@ export function AVSection() {
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto mb-14">
-        {AV.cards.map((card, i) => {
-          const Diagram = cardDiagrams[card.icon]
-          return (
-            <motion.div
-              key={card.title}
-              initial={{ y: 16 }}
-              whileInView={{ y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.06, duration: 0.4 }}
-            >
-              <GlowCard className="h-full !p-6">
-                <div className="mb-4 text-teal">
-                  <Diagram className="w-full max-w-[100px]" />
-                </div>
-                <h3 className="font-semibold text-base mb-2 text-ink">{card.title}</h3>
-                <p className="text-ink-muted text-sm leading-relaxed">{card.body}</p>
-              </GlowCard>
-            </motion.div>
-          )
-        })}
+        {AV.cards.map((card, i) => (
+          <motion.div
+            key={card.title}
+            initial={{ y: 16 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.06, duration: 0.4 }}
+          >
+            <GlowCard className="h-full !p-6">
+              <div className="mb-4 -mx-2 -mt-2 rounded-xl overflow-hidden">
+                <DiagramImage name={diagramNames[card.icon]} alt={card.title} />
+              </div>
+              <h3 className="font-semibold text-base mb-2 text-ink">{card.title}</h3>
+              <p className="text-ink-muted text-sm leading-relaxed">{card.body}</p>
+            </GlowCard>
+          </motion.div>
+        ))}
       </div>
 
       <div className="max-w-4xl mx-auto">
