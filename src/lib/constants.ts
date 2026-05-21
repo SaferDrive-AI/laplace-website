@@ -37,17 +37,6 @@ export const PROBLEM = {
   brandLabel: 'LAPLACE',
 }
 
-export const WHY_NOW = {
-  label: 'WHY NOW',
-  headline: 'Customers already pay for what-if — painfully.',
-  stats: [
-    { value: '$379B', label: 'Digital twin market by 2034' },
-    { value: '$1M+', label: '18+ months per implementation' },
-    { value: '75%', label: 'of spend on people & services' },
-  ],
-  body:
-    'A $379B digital-twin market grows manually, project by project. Three-quarters of every dollar funds consultants writing rules and modelers hand-building geometry. When the unknown hits, operators pay again in reality — through penalties, lost orders and projects shelved. Agentic world models replace projects with platforms.',
-}
 
 export const ENGINE = {
   label: 'ENGINE',

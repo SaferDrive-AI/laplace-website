@@ -2,7 +2,6 @@ import { Navbar } from './components/layout/Navbar'
 import { Footer } from './components/layout/Footer'
 import { HeroSection } from './components/sections/HeroSection'
 import { ProblemSection } from './components/sections/ProblemSection'
-import { WhyNowSection } from './components/sections/WhyNowSection'
 import { EngineSection } from './components/sections/EngineSection'
 import { ApplicationsSection } from './components/sections/ApplicationsSection'
 import { AVSection } from './components/sections/AVSection'
@@ -15,7 +14,6 @@ export default function App() {
       <Navbar />
       <HeroSection />
       <ProblemSection />
-      <WhyNowSection />
       <EngineSection />
       <ApplicationsSection />
       <AVSection />
