@@ -212,5 +212,5 @@ export const CTA = {
   subheadline:
     'If you operate at city, airport, warehouse or fleet scale — or invest in companies that do — let\'s talk.',
   button: 'Talk to Us',
-  email: 'contact@inchor.ai',
+  email: 'howie@laplaceintelligence.com',
 }
