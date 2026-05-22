@@ -2,7 +2,7 @@ export const NAV_LINKS = [
   { label: 'Problem', href: '#problem' },
   { label: 'Engine', href: '#engine' },
   { label: 'Applications', href: '#applications' },
-  { label: 'AV', href: '#av' },
+  { label: 'Autonomy', href: '#av' },
   { label: 'City', href: '#city' },
 ] as const
 
@@ -106,7 +106,7 @@ export const APPLICATIONS = {
   cards: [
     {
       icon: 'Car' as const,
-      title: 'AV / Robotics',
+      title: 'Autonomy / Robotics',
       description: 'Counterfactual rollout for fleet decisions and edge-case rehearsal.',
     },
     {
@@ -131,7 +131,7 @@ export const AV = {
   label: 'ON THE ROAD',
   headline: 'What-if for autonomous fleets.',
   subhead:
-    'AV programs ship lane policies, perception updates and routing tweaks every sprint — each one a live experiment on public roads. Laplace rehearses each change against an Agent Foundation Model first.',
+    'Autonomy programs ship lane policies, perception updates and routing tweaks every sprint — each one a live experiment on public roads. Laplace rehearses each change against an Agent Foundation Model first.',
   cards: [
     {
       icon: 'Route' as const,

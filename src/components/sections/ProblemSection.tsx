@@ -9,7 +9,7 @@ const verticals = [
   { icon: Building2, label: 'City' },
   { icon: Plane, label: 'Airport' },
   { icon: Warehouse, label: 'Warehouse' },
-  { icon: Car, label: 'AV' },
+  { icon: Car, label: 'Autonomy' },
 ]
 
 export function ProblemSection() {
