@@ -21,7 +21,7 @@ export const HERO = {
 
 export const PROBLEM = {
   label: 'THE PROBLEM',
-  headline: 'The physical world has no preview.',
+  headline: 'Unlike software, the physical world has no preview.',
   body: 'Without preview, every major change becomes a live experiment.',
   knownCard: {
     title: 'Known what-ifs',

@@ -153,14 +153,14 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto w-full grid lg:grid-cols-[1.35fr_1fr] gap-10 lg:gap-14 items-center">
         <div className="text-left">
-          <motion.p
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-teal text-xs font-bold tracking-[0.3em] uppercase mb-8"
+            className="mb-8"
           >
-            {HERO.eyebrow}
-          </motion.p>
+            <img src="/laplace-logo.svg" alt="LAPLACE" className="h-12 sm:h-14 md:h-16 w-auto" />
+          </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 25 }}
