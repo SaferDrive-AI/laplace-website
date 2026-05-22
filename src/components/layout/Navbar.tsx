@@ -23,7 +23,7 @@ export function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16 md:h-20">
         <a href="#" className="block" aria-label="Laplace home">
-          <img src="/laplace-logo.svg" alt="LAPLACE" className="h-5 md:h-6 w-auto" />
+          <img src="/laplace-logo.svg" alt="LAPLACE" className="h-8 md:h-10 w-auto" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">

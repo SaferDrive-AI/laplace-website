@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="border-t border-ink/5">
       <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex flex-col items-center md:items-start gap-1">
-          <img src="/laplace-logo.svg" alt="LAPLACE" className="h-6 w-auto" />
+          <img src="/laplace-logo.svg" alt="LAPLACE" className="h-8 md:h-9 w-auto" />
           <span className="text-xs text-ink-faint">What-if engine for the physical world</span>
         </div>
 
