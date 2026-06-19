@@ -4,11 +4,12 @@ interface ButtonProps {
   variant?: 'primary' | 'outline'
   size?: 'md' | 'lg'
   href?: string
+  external?: boolean
   children: React.ReactNode
   className?: string
 }
 
-export function Button({ variant = 'primary', size = 'md', href, children, className }: ButtonProps) {
+export function Button({ variant = 'primary', size = 'md', href, external, children, className }: ButtonProps) {
   const base =
     'inline-flex items-center justify-center font-medium rounded-full transition-all duration-300 cursor-pointer tracking-wide'
   const variants = {
@@ -23,7 +24,8 @@ export function Button({ variant = 'primary', size = 'md', href, children, class
   const classes = cn(base, variants[variant], sizes[size], className)
 
   if (href) {
-    return <a href={href} className={classes}>{children}</a>
+    const externalProps = external ? { target: '_blank', rel: 'noopener noreferrer' } : {}
+    return <a href={href} className={classes} {...externalProps}>{children}</a>
   }
   return <button className={classes}>{children}</button>
 }

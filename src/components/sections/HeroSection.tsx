@@ -186,7 +186,10 @@ export function HeroSection() {
             transition={{ delay: 0.85, duration: 0.6 }}
             className="mt-12 flex flex-col sm:flex-row items-start gap-4"
           >
-            <Button href={HERO.cta1Href} size="lg">
+            <Button href={HERO.demoHref} external size="lg">
+              {HERO.demoLabel}
+            </Button>
+            <Button href={HERO.cta1Href} variant="outline" size="lg">
               {HERO.cta1}
             </Button>
             <Button href={HERO.cta2Href} variant="outline" size="lg">

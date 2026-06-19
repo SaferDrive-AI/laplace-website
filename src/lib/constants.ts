@@ -13,6 +13,8 @@ export const HERO = {
     'Agentic world models for physical-world decisions — build the world, learn the agents, roll out the future.',
   body:
     'Every change to the physical world today is a live experiment. Cities, ports, warehouses and AV fleets ship updates without preview. Laplace turns real-world data into editable 3D worlds with foundation-model agents inside — so operators can rehearse what-ifs, surface unknown risks, and roll out the future before it happens.',
+  demoLabel: 'Live Demo',
+  demoHref: 'https://demo.laplaceintelligence.com',
   cta1: 'See the Engine',
   cta1Href: '#engine',
   cta2: 'Talk to Us',
