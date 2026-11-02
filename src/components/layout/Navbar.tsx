@@ -22,17 +22,17 @@ export function Navbar() {
       )}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="block" aria-label="Laplace home">
+        <a href="/" className="block" aria-label="Laplace home">
           <img src="/laplace-logo.svg" alt="LAPLACE" className="h-8 md:h-10 w-auto" />
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-5">
           {NAV_LINKS.map((link) => (
             <a key={link.href} href={link.href} className="text-sm text-ink-muted hover:text-ink transition-colors">
               {link.label}
             </a>
           ))}
-          <Button href="#contact" size="md">Talk to Us</Button>
+          <Button href="/#contact" size="md">Talk to Us</Button>
         </div>
 
         <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-ink p-2" aria-label="Toggle menu">
@@ -47,7 +47,7 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
-          <Button href="#contact" className="mt-4 w-full">Talk to Us</Button>
+          <Button href="/#contact" className="mt-4 w-full">Talk to Us</Button>
         </div>
       )}
     </nav>

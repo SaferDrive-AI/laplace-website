@@ -9,7 +9,7 @@ export function Footer() {
           <span className="text-xs text-ink-faint">What-if engine for the physical world</span>
         </div>
 
-        <div className="flex gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {NAV_LINKS.map((link) => (
             <a key={link.href} href={link.href} className="text-xs text-ink-faint hover:text-ink-muted transition-colors">
               {link.label}

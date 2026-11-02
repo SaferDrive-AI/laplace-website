@@ -1,9 +1,10 @@
 export const NAV_LINKS = [
-  { label: 'Problem', href: '#problem' },
-  { label: 'Engine', href: '#engine' },
-  { label: 'Applications', href: '#applications' },
-  { label: 'Autonomy', href: '#av' },
-  { label: 'City', href: '#city' },
+  { label: 'Problem', href: '/#problem' },
+  { label: 'Engine', href: '/#engine' },
+  { label: 'Applications', href: '/#applications' },
+  { label: 'Autonomy', href: '/#av' },
+  { label: 'City', href: '/#city' },
+  { label: 'Blog', href: '/blog' },
 ] as const
 
 export const HERO = {
