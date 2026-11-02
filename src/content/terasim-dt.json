@@ -44,12 +44,8 @@
         "text": "Laplace Intelligence launched "
       },
       {
-        "text": "TeraSi",
-        "href": "https://github.com/mcity/TeraSim"
-      },
-      {
-        "text": "m-DT",
-        "href": "https://github.com/mcity/TeraSim"
+        "text": "TeraSim-DT",
+        "href": "https://github.com/SaferDrive-AI/Terasim-Metropolis"
       },
       {
         "text": ", an urban digital twin for traffic simulation that allows users to test scenarios, understand impacts across roadways, and help cities make better planning and operational decisions."
@@ -215,20 +211,8 @@
         "text": " instance with two "
       },
       {
-        "text": "NVIDIA RTX PRO 6000 "
-      },
-      {
-        "text": "Blackwell",
+        "text": "NVIDIA RTX PRO 6000 Blackwell Server Edition GPUs",
         "href": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000-family/"
-      },
-      {
-        "text": " "
-      },
-      {
-        "text": "Server Edition "
-      },
-      {
-        "text": "GPUs"
       },
       {
         "text": "."
