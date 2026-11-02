@@ -34,3 +34,11 @@ deploy through the existing Vercel workflow. There is no CMS or admin editor.
 
 The test post deliberately has `paragraphs: []`; remove its entry when testing
 is complete. Unknown blog URLs display a post-not-found page.
+
+### First official article
+
+The TeraSim-DT launch article is at `/blog/terasim-dt-open-source-traffic-simulation`.
+Its exact source text and inline links are in `src/content/terasim-dt.json`;
+its original diagram is in `public/blog/terasim-dt/workflow.png`.
+`FeatureArticle.tsx` provides the responsive editorial layout and section links.
+The test post remains directly accessible but is hidden from the blog index.
