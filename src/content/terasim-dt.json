@@ -1,0 +1,319 @@
+[
+  {
+    "type": "title",
+    "runs": [
+      {
+        "text": "Laplace Intelligence Launches TeraSim"
+      },
+      {
+        "text": "-DT"
+      },
+      {
+        "text": " Open Source Traffic Simulation Platform to Cut Delays "
+      }
+    ]
+  },
+  {
+    "type": "subtitle",
+    "runs": [
+      {
+        "text": "An Urban Digital Twin for Traffic Simulation and Management"
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "runs": [
+      {
+        "text": "How would a stalled vehicle disrupt traffic across a city? What happens when a major event brings thousands of additional trips into downtown? Could a different signal timing strategy help keep traffic moving?"
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "runs": [
+      {
+        "text": "Cities need a way to answer these “what-if” questions—to anticipate disruptions, evaluate alternative designs, and plan effective responses before making changes on the street."
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "runs": [
+      {
+        "text": "Laplace Intelligence launched "
+      },
+      {
+        "text": "TeraSi",
+        "href": "https://github.com/mcity/TeraSim"
+      },
+      {
+        "text": "m-DT",
+        "href": "https://github.com/mcity/TeraSim"
+      },
+      {
+        "text": ", an urban digital twin for traffic simulation that allows users to test scenarios, understand impacts across roadways, and help cities make better planning and operational decisions."
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "runs": [
+      {
+        "text": "We are releasing TeraSim"
+      },
+      {
+        "text": "-DT"
+      },
+      {
+        "text": " as open source, making this foundation available to cities, researchers, and developers."
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "By turning camera observations into simulation-ready inputs and returning optimized recommendations in minutes rather than the hours or days of manual analysis, TeraSim-DT helps cities test ideas before committing field resources, and gives developers a ready foundation in place of months of building simulation workflows from scratch."
+      }
+    ]
+  },
+  {
+    "type": "heading",
+    "runs": [
+      {
+        "text": "From Observation to Simulation"
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "runs": [
+      {
+        "text": "Intersection cameras capture how traffic moves throughout the day. TeraSim"
+      },
+      {
+        "text": "-DT"
+      },
+      {
+        "text": " turns those observations into inputs for simulation."
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "runs": [
+      {
+        "text": "For developers building vision AI agents with the  "
+      },
+      {
+        "text": "NVIDIA Metropolis ",
+        "href": "https://build.nvidia.com/nvidia/video-search-and-summarization"
+      },
+      {
+        "text": "Blueprint for v",
+        "href": "https://build.nvidia.com/nvidia/video-search-and-summarization"
+      },
+      {
+        "text": "ideo ",
+        "href": "https://build.nvidia.com/nvidia/video-search-and-summarization"
+      },
+      {
+        "text": "s",
+        "href": "https://build.nvidia.com/nvidia/video-search-and-summarization"
+      },
+      {
+        "text": "earch and",
+        "href": "https://build.nvidia.com/nvidia/video-search-and-summarization"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "Summarization",
+        "href": "https://build.nvidia.com/nvidia/video-search-and-summarization"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "(VSS), the TeraSim platform plugs into existing workflows for detecting and tracking vehicles using camera feeds. The platform converts those observations into traffic demand and uses it to drive a simulated road network. Engineers can then evaluate how changes to infrastructure, traffic demand, or operating strategies could affect traffic conditions."
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "runs": [
+      {
+        "text": "This connection between observation and simulation provides a foundation for testing what-if scenarios and comparing potential responses."
+      }
+    ]
+  },
+  {
+    "type": "image",
+    "src": "/blog/terasim-dt/workflow.png",
+    "alt": "Camera observations pass through NVIDIA Metropolis VSS into a TeraSim urban digital twin. What-if scenarios enter simulation, alternatives are evaluated, and results support planning and operational decisions. Signal timing optimization is the first validated application."
+  },
+  {
+    "type": "caption",
+    "runs": [
+      {
+        "text": "Camera-informed simulation connects observed traffic with what-if analysis and engineering decisions.",
+        "italic": true
+      }
+    ]
+  },
+  {
+    "type": "heading",
+    "runs": [
+      {
+        "text": "A First Application in Signal Optimization"
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "runs": [
+      {
+        "text": "The initial application focuses on traffic signal timing at individual intersections and coordinated corridors."
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "runs": [
+      {
+        "text": "Engineers can request an optimization through a conversational agent interface built with the VSS Blueprint. The platform evaluates candidate timing plans in simulation and returns a recommended plan, together with before-and-after measures such as delay and stops per vehicle. Results include a NEMA-format timing plan and a report for engineering review."
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "runs": [
+      {
+        "text": "Demand estimates update every ten minutes, supporting repeated evaluation as traffic conditions change."
+      }
+    ]
+  },
+  {
+    "type": "heading",
+    "runs": [
+      {
+        "text": "Results from Our Reference Deployment"
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "runs": [
+      {
+        "text": "We evaluated the pipeline using four recorded camera feeds from a busy downtown intersection, running on an "
+      },
+      {
+        "text": "NVIDIA Brev",
+        "href": "https://brev.nvidia.com/"
+      },
+      {
+        "text": " instance with two "
+      },
+      {
+        "text": "NVIDIA RTX PRO 6000 "
+      },
+      {
+        "text": "Blackwell",
+        "href": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000-family/"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "Server Edition "
+      },
+      {
+        "text": "GPUs"
+      },
+      {
+        "text": "."
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "runs": [
+      {
+        "text": "In this deployment, the standard optimization workflow returned a plan in under two minutes. Recommended plans reduced"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "simulated control delay by 5–27%",
+        "bold": true
+      },
+      {
+        "text": " c"
+      },
+      {
+        "text": "ompared with the intersection’s existing timing plan."
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "runs": [
+      {
+        "text": "These results demonstrate how camera-informed simulation can support traffic engineering decisions. The improvements were measured in simulation; field deployment requires engineering review and validation."
+      }
+    ]
+  },
+  {
+    "type": "heading",
+    "runs": [
+      {
+        "text": "An Open Foundation for Urban Mobility"
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "runs": [
+      {
+        "text": "Built on TeraSim, originally developed at Mcity, University of Michigan, TeraSim"
+      },
+      {
+        "text": "-DT"
+      },
+      {
+        "text": " brings naturalistic traffic simulation to urban traffic operations."
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "runs": [
+      {
+        "text": "Signal optimization is the first application. Our broader vision extends to evaluating traffic disruptions, planning for major events, and comparing transportation designs and management strategies. By exploring these possibilities in a digital twin, cities can better anticipate impacts and prepare their responses."
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "runs": [
+      {
+        "text": "Explore the "
+      },
+      {
+        "text": "source code",
+        "href": "https://github.com/SaferDrive-AI/Terasim-Metropolis"
+      },
+      {
+        "text": ", follow the "
+      },
+      {
+        "text": "documentation",
+        "href": "https://saferdrive-ai.github.io/Terasim-Metropolis"
+      },
+      {
+        "text": ", or contribute a new application."
+      }
+    ]
+  }
+]

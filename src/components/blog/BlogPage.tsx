@@ -1,3 +1,5 @@
+import { FeatureArticle, FeatureCard } from './FeatureArticle'
+import { featureSlug, featureTitle } from '../../lib/featurePost'
 import { useEffect } from 'react'
 import { ArrowLeft, ArrowUpRight } from 'lucide-react'
 import { posts } from '../../lib/posts'
@@ -7,22 +9,24 @@ const formatDate = (date: string) => new Date(`${date}T12:00:00Z`).toLocaleDateS
 })
 
 export function BlogPage({ path }: { path: string }) {
+  const isFeature = path === `/blog/${featureSlug}`
   const isIndex = path === '/blog'
   const post = posts.find((entry) => path === `/blog/${entry.slug}`)
 
   useEffect(() => {
-    document.title = `${isIndex ? 'Blog' : post?.title ?? 'Post not found'} — Laplace`
-  }, [isIndex, post])
+    document.title = `${isIndex ? 'Blog' : isFeature ? featureTitle : post?.title ?? 'Post not found'} — Laplace`
+  }, [isIndex, isFeature, post])
 
   return (
     <main className="max-w-6xl mx-auto px-6 pt-32 md:pt-44 pb-24 min-h-[80vh]">
-      {isIndex ? (
+      {isFeature ? <FeatureArticle /> : isIndex ? (
         <>
           <p className="text-xs tracking-[0.2em] uppercase text-teal mb-5">From Laplace</p>
           <h1 className="text-6xl md:text-8xl mb-6" style={{ fontFamily: 'var(--font-family-serif)' }}>Blog</h1>
           <p className="text-lg text-ink-muted max-w-xl mb-16">Ideas and updates from Laplace.</p>
+          <FeatureCard />
           <div className="border-t border-ink/10">
-            {posts.map((entry) => (
+            {posts.filter((entry) => !entry.isTest).map((entry) => (
               <a key={entry.slug} href={`/blog/${entry.slug}`} className="group flex items-center justify-between gap-6 py-8 md:py-10 border-b border-ink/10 hover:bg-cream-dark/50 transition-colors focus-visible:outline-2 focus-visible:outline-teal focus-visible:outline-offset-4">
                 <div>
                   <div className="flex flex-wrap items-center gap-3 text-xs text-ink-muted mb-3">
