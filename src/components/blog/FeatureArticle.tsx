@@ -43,7 +43,15 @@ export function FeatureArticle() {
           if (block.type === 'heading') return <h2 id={`section-${index}`} key={index}><RichText runs={block.runs} /></h2>
           if (block.type === 'image') return <figure key={index}><a href={block.src} target="_blank" rel="noreferrer" aria-label="Open workflow diagram at full size"><img src={block.src} alt={block.alt} loading="lazy" /></a><figcaption><RichText runs={content[index+1].runs} /></figcaption></figure>
           if (block.type === 'caption') return null
-          return <p key={index} className={index === 2 ? 'feature-lead' : index === content.length-1 ? 'feature-closing' : undefined}><RichText runs={block.runs} /></p>
+          return <Fragment key={index}>
+            {index === content.length - 1 && (
+              <aside className="nvidia-blog-callout" aria-labelledby="nvidia-blog-title">
+                <h3 id="nvidia-blog-title">Featured in NVIDIA’s Blog</h3>
+                <p>Learn more about how physical and agentic AI are transforming urban mobility and city services in <a href="https://blogs.nvidia.com/blog/cities-physical-agentic-ai-applications/">NVIDIA’s blog, which highlights Laplace Intelligence’s TeraSim platform</a>.</p>
+              </aside>
+            )}
+            <p className={index === 2 ? 'feature-lead' : index === content.length-1 ? 'feature-closing' : undefined}><RichText runs={block.runs} /></p>
+          </Fragment>
         })}
       </div>
     </div>
